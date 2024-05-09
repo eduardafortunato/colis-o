@@ -37,15 +37,17 @@ xcogumelo = 500+128
 ycogumelo = 300+128
 x_1 = x
 y_1 = y
+estado_personagem = 1
 print ('vamos la')
 
 def colidiu():
-    distancia =  math.sqrt(math.pow(xmario-xcogumelo,2)+math.pow(ymario-ycogumelo,2))
-    print (distancia)
-    if distancia<128+50:
-        return True
-    else:
-        return False
+    if estado_personagem == 1:
+        distancia =  math.sqrt(math.pow(xmario-xcogumelo,2)+math.pow(ymario-ycogumelo,2))
+        print (distancia)
+        if distancia<128+50:
+             return True
+        else:
+             return False
     
 def death(self):
     del  self   
@@ -80,6 +82,7 @@ while not fgExit:
         cogumelo.play()
         personagemImg = personagem3Img
         personagem2Img = pygame.transform.scale(personagem2Img, inexistir)
+        estado_personagem = 2
         x = x_1
         y = y_1                       
     else:
