@@ -37,11 +37,11 @@ xcogumelo = 500+128
 ycogumelo = 300+128
 x_1 = x
 y_1 = y
-estado_personagem = 1
+estado_personagem = 1 #necessario para o personagem sumir
 print ('vamos la')
 
 def colidiu():
-    if estado_personagem == 1:
+    if estado_personagem == 1:#necessario para o personagem sumir
         distancia =  math.sqrt(math.pow(xmario-xcogumelo,2)+math.pow(ymario-ycogumelo,2))
         print (distancia)
         if distancia<128+50:
@@ -81,8 +81,8 @@ while not fgExit:
     if colidiu():
         cogumelo.play()
         personagemImg = personagem3Img
-        personagem2Img = pygame.transform.scale(personagem2Img, inexistir)
-        estado_personagem = 2
+        personagem2Img = pygame.transform.scale(personagem2Img, inexistir)#personagem fica invisivel
+        estado_personagem = 2 #personagem some do programa
         x = x_1
         y = y_1                       
     else:
